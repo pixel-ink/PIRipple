@@ -5,6 +5,11 @@
 
 ---
 
+#demo
+
+![demo](https://raw.github.com/wiki/pixel-ink/PIRipple/demo.gif)
+
+---
 
 # install
 - manually
