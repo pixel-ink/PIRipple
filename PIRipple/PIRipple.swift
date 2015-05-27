@@ -27,7 +27,7 @@ public extension UIView {
 public class Ripple {
   
   public struct Option {
-    var width = CGFloat(5.0)
+    var borderWidth = CGFloat(5.0)
     var radius = CGFloat(30.0)
     var duration = CFTimeInterval(0.4)
     var borderColor = UIColor.whiteColor()
@@ -117,14 +117,14 @@ public class Ripple {
   
   private class func perform(view:UIView, point:CGPoint, option: Ripple.Option, then: ()->() ) {
     UIGraphicsBeginImageContextWithOptions (
-      CGSizeMake((option.radius + option.width) * 2, (option.radius + option.width) * 2), false, 3.0)
+      CGSizeMake((option.radius + option.borderWidth) * 2, (option.radius + option.borderWidth) * 2), false, 3.0)
     let path = UIBezierPath(
-      roundedRect: CGRectMake(option.width, option.width, option.radius * 2, option.radius * 2),
+      roundedRect: CGRectMake(option.borderWidth, option.borderWidth, option.radius * 2, option.radius * 2),
       cornerRadius: option.radius)
     option.fillColor.setFill()
     path.fill()
     option.borderColor.setStroke()
-    path.lineWidth = option.width
+    path.lineWidth = option.borderWidth
     path.stroke()
     let img = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
