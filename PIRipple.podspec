@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.author             = { "pixelink" => "https://github.com/pixel-ink" }
   s.social_media_url   = "http://twitter.com/pixelink_jp"
   s.ios.deployment_target = "8.0"
-  s.source       = { :git => "https://github.com/pixel-ink/PIRipple", :tag => "0.1.1" }
+  s.source       = { :git => "https://github.com/pixel-ink/PIRipple.git", :tag => s.version }
   s.source_files  = "**/PIRipple.swift"
 
 end
