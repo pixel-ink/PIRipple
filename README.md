@@ -3,6 +3,10 @@
 
 ## Ripple Effect for iOS (swift)
 
+![](https://cocoapod-badges.herokuapp.com/l/PIRipple/badge.png)
+![](https://cocoapod-badges.herokuapp.com/v/PIRipple/badge.png)
+![](https://cocoapod-badges.herokuapp.com/p/PIRipple/badge.png)
+
 ---
 
 #demo
