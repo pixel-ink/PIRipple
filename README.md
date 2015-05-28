@@ -12,9 +12,12 @@
 ---
 
 # install
+
 - manually
   - add PIRipple.swift into your project
-
+- cocoapods
+  - add " pod 'PIRipple', '0.1.2' " into your Podfile
+  - add " import PIRipple " into your code
 
 # basic usage
 
