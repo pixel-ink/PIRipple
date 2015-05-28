@@ -97,7 +97,7 @@ Ripple.border(tagetView, locationInView:CGPointZero, color: UIColor.whiteColor()
 - example
 
 ```
-var option = Ripple.Option()
+var option = Ripple.option()
 //configure
 option.borderWidth = CGFloat(5.0)
 option.radius = CGFloat(30.0)

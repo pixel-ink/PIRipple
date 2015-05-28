@@ -27,14 +27,18 @@ public extension UIView {
 public class Ripple {
   
   public struct Option {
-    var borderWidth = CGFloat(5.0)
-    var radius = CGFloat(30.0)
-    var duration = CFTimeInterval(0.4)
-    var borderColor = UIColor.whiteColor()
-    var fillColor = UIColor.clearColor()
-    var scale = CGFloat(3.0)
+    public var borderWidth = CGFloat(5.0)
+    public var radius = CGFloat(30.0)
+    public var duration = CFTimeInterval(0.4)
+    public var borderColor = UIColor.whiteColor()
+    public var fillColor = UIColor.clearColor()
+    public var scale = CGFloat(3.0)
   }
 
+  public class func option () -> Option {
+    return Option()
+  }
+  
   public class func run(view:UIView, locationInView:CGPoint, option:Ripple.Option) {
     run(view, locationInView: locationInView, option: option){}
   }
