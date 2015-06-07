@@ -13,6 +13,8 @@
 
 ![demo](https://raw.github.com/wiki/pixel-ink/PIRipple/demo.gif)
 
+- if try this demo. git clone / download and open project, and run.
+
 ---
 
 # install
