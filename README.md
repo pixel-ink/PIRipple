@@ -1,11 +1,12 @@
 
-# PIRipple
+![PIRipple](https://raw.github.com/wiki/pixel-ink/PIRipple/pir.png)
 
 ## Ripple Effect for iOS (swift)
 
 ![](https://cocoapod-badges.herokuapp.com/l/PIRipple/badge.png)
 ![](https://cocoapod-badges.herokuapp.com/v/PIRipple/badge.png)
 ![](https://cocoapod-badges.herokuapp.com/p/PIRipple/badge.png)
+![](https://img.shields.io/badge/twitter-@pixelink__jp-blue.svg)
 
 ---
 
