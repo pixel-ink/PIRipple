@@ -1,5 +1,5 @@
 
-![PIRipple](https://raw.github.com/wiki/pixel-ink/PIRipple/pir.png)
+# PIRipple
 
 ## Ripple Effect for iOS (swift)
 
