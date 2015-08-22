@@ -33,6 +33,7 @@ public class Ripple {
     public var borderColor = UIColor.whiteColor()
     public var fillColor = UIColor.clearColor()
     public var scale = CGFloat(3.0)
+    public var isRunSuperView = true
   }
 
   public class func option () -> Option {
@@ -44,7 +45,7 @@ public class Ripple {
   }
 
   public class func run(view:UIView, locationInView:CGPoint, option:Ripple.Option, then: ()->() ) {
-    prePreform(view, point: locationInView, option: option, isLocationInView: true, isRunSuperView: true, then: then)
+    prePreform(view, point: locationInView, option: option, isLocationInView: true, then: then)
   }
 
   public class func run(view:UIView, absolutePosition:CGPoint, option:Ripple.Option) {
@@ -52,7 +53,7 @@ public class Ripple {
   }
 
   public class func run(view:UIView, absolutePosition:CGPoint, option:Ripple.Option, then: ()->() ) {
-    prePreform(view, point: absolutePosition, option: option, isLocationInView: false, isRunSuperView: true, then: then)
+    prePreform(view, point: absolutePosition, option: option, isLocationInView: false, then: then)
   }
 
   public class func border(view:UIView, locationInView:CGPoint, color:UIColor) {
@@ -62,7 +63,7 @@ public class Ripple {
   public class func border(view:UIView, locationInView:CGPoint, color:UIColor, then: ()->() ) {
     var opt = Ripple.Option()
     opt.borderColor = color
-    prePreform(view, point: locationInView, option: opt, isLocationInView: true, isRunSuperView: true, then: then)
+    prePreform(view, point: locationInView, option: opt, isLocationInView: true, then: then)
   }
 
   public class func border(view:UIView, absolutePosition:CGPoint, color:UIColor) {
@@ -72,7 +73,7 @@ public class Ripple {
   public class func border(view:UIView, absolutePosition:CGPoint, color:UIColor, then: ()->() ) {
     var opt = Ripple.Option()
     opt.borderColor = color
-    prePreform(view, point: absolutePosition, option: opt, isLocationInView: false, isRunSuperView: true, then: then)
+    prePreform(view, point: absolutePosition, option: opt, isLocationInView: false, then: then)
   }
   
   public class func fill(view:UIView, locationInView:CGPoint, color:UIColor) {
@@ -83,7 +84,7 @@ public class Ripple {
     var opt = Ripple.Option()
     opt.borderColor = color
     opt.fillColor = color
-    prePreform(view, point: locationInView, option: opt, isLocationInView: true, isRunSuperView: true, then: then)
+    prePreform(view, point: locationInView, option: opt, isLocationInView: true, then: then)
   }
  
   public class func fill(view:UIView, absolutePosition:CGPoint, color:UIColor) {
@@ -94,19 +95,18 @@ public class Ripple {
     var opt = Ripple.Option()
     opt.borderColor = color
     opt.fillColor = color
-    prePreform(view, point: absolutePosition, option: opt, isLocationInView: false, isRunSuperView: true, then: then)
+    prePreform(view, point: absolutePosition, option: opt, isLocationInView: false, then: then)
   }
   
-  private class func prePreform(view:UIView, point:CGPoint, option: Ripple.Option, isLocationInView:Bool, isRunSuperView: Bool, then: ()->() ) {
+  private class func prePreform(view:UIView, point:CGPoint, option: Ripple.Option, isLocationInView:Bool, then: ()->() ) {
     
     let p = isLocationInView ? CGPointMake(point.x + view.frame.origin.x, point.y + view.frame.origin.y) : point
-    if isRunSuperView, let superview = view.superview {
+    if option.isRunSuperView, let superview = view.superview {
       prePreform(
         superview,
         point: p,
         option: option,
         isLocationInView: isLocationInView,
-        isRunSuperView: isRunSuperView,
         then: then
       )
     } else {
