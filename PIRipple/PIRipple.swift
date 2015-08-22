@@ -167,7 +167,7 @@ public class Ripple {
     dispatch_async(dispatch_get_main_queue()) {
       [weak rippleLayer] in
       if let target = rippleLayer {
-        let layer = CALayer()
+        var layer = CALayer()
         layer.contents = img.CGImage
         layer.frame = CGRectMake(point.x - option.radius, point.y - option.radius, option.radius * 2, option.radius * 2)
         target.addSublayer(layer)
@@ -178,6 +178,7 @@ public class Ripple {
           layer.removeAllAnimations()
           layer.removeFromSuperlayer()
           then()
+          layer = nil
         }
         layer.addAnimation(opacity, forKey:nil)
         layer.addAnimation(transform, forKey:nil)
