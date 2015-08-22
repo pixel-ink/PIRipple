@@ -23,7 +23,7 @@
 - manually
   - add PIRipple.swift into your project
 - cocoapods
-  - add " pod 'PIRipple', '1.0.0' " into your Podfile
+  - add " pod 'PIRipple', '1.1.0' " into your Podfile
   - add " import PIRipple " into your code
 
 # basic usage
@@ -104,7 +104,7 @@ Ripple.border(tagetView, locationInView:CGPointZero, color: UIColor.whiteColor()
 
 # advanced usage
 
-- example
+- your config animation
 
 ```
 var option = Ripple.option()
@@ -122,3 +122,9 @@ Ripple.run(self, locationInView: CGPointZero, option: option){
 
 ```
 
+- cancel animation
+
+```
+UIView.rippleStop()
+Ripple.stop(self.view)
+```
