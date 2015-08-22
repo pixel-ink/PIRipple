@@ -22,10 +22,16 @@ public extension UIView {
     Ripple.fill(self, locationInView: location, color: color, then: then)
   }
 
+  public func rippleStop() {
+    Ripple.stop(self)
+  }
+  
 }
 
 public class Ripple {
   
+  private static var targetLayer: CALayer?
+
   public struct Option {
     public var borderWidth = CGFloat(5.0)
     public var radius = CGFloat(30.0)
@@ -149,22 +155,41 @@ public class Ripple {
     transform.fromValue = NSValue(CATransform3D: CATransform3DMakeScale(1.0 / option.scale, 1.0 / option.scale, 1.0))
     transform.toValue = NSValue(CATransform3D: CATransform3DMakeScale(option.scale, option.scale, 1.0))
     
+    var rippleLayer:CALayer? = targetLayer
+
+    if rippleLayer == nil {
+      rippleLayer = CALayer()
+      view.layer.addSublayer(rippleLayer)
+      targetLayer = rippleLayer
+      targetLayer?.addSublayer(CALayer())//Temporary, CALayer.sublayers is Implicitly Unwrapped Optional
+    }
+    
     dispatch_async(dispatch_get_main_queue()) {
-      let layer = CALayer()
-      layer.contents = img.CGImage
-      layer.frame = CGRectMake(point.x - option.radius, point.y - option.radius, option.radius * 2, option.radius * 2)
-      view.layer.addSublayer(layer)
-      CATransaction.begin()
-      CATransaction.setAnimationDuration(option.duration)
-      CATransaction.setCompletionBlock {
-        layer.contents = nil
-        layer.removeAllAnimations()
-        layer.removeFromSuperlayer()
-        then()
+      [weak rippleLayer] in
+      if let target = rippleLayer {
+        let layer = CALayer()
+        layer.contents = img.CGImage
+        layer.frame = CGRectMake(point.x - option.radius, point.y - option.radius, option.radius * 2, option.radius * 2)
+        target.addSublayer(layer)
+        CATransaction.begin()
+        CATransaction.setAnimationDuration(option.duration)
+        CATransaction.setCompletionBlock {
+          layer.contents = nil
+          layer.removeAllAnimations()
+          layer.removeFromSuperlayer()
+          then()
+        }
+        layer.addAnimation(opacity, forKey:nil)
+        layer.addAnimation(transform, forKey:nil)
+        CATransaction.commit()
       }
-      layer.addAnimation(opacity, forKey:nil)
-      layer.addAnimation(transform, forKey:nil)
-      CATransaction.commit()
     }
   }
+  
+  public class func stop(view:UIView) {
+    for l in targetLayer?.sublayers ?? nil {
+      l.removeAllAnimations()
+    }
+  }
+  
 }
