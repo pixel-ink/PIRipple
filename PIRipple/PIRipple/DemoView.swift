@@ -3,10 +3,10 @@ import UIKit
 
 class DemoView1 : UIView {
   
-  override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+  override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
     super.touchesBegan(touches, withEvent: event)
     for touch: AnyObject in touches {
-      var t: UITouch = touch as! UITouch
+      let t: UITouch = touch as! UITouch
       let location = t.locationInView(self)
       
       //RIPPLE BORDER
@@ -19,10 +19,10 @@ class DemoView1 : UIView {
 
 class DemoView2 : UIView {
   
-  override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+  override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
     super.touchesBegan(touches, withEvent: event)
     for touch: AnyObject in touches {
-      var t: UITouch = touch as! UITouch
+      let t: UITouch = touch as! UITouch
       let location = t.locationInView(self)
 
       //RIPPLE FILL

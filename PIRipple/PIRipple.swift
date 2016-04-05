@@ -159,7 +159,7 @@ public class Ripple {
 
     if rippleLayer == nil {
       rippleLayer = CALayer()
-      view.layer.addSublayer(rippleLayer)
+      view.layer.addSublayer(rippleLayer!)
       targetLayer = rippleLayer
       targetLayer?.addSublayer(CALayer())//Temporary, CALayer.sublayers is Implicitly Unwrapped Optional
     }
@@ -167,7 +167,7 @@ public class Ripple {
     dispatch_async(dispatch_get_main_queue()) {
       [weak rippleLayer] in
       if let target = rippleLayer {
-        var layer = CALayer()
+        let layer = CALayer()
         layer.contents = img.CGImage
         layer.frame = CGRectMake(point.x - option.radius, point.y - option.radius, option.radius * 2, option.radius * 2)
         target.addSublayer(layer)
@@ -178,7 +178,6 @@ public class Ripple {
           layer.removeAllAnimations()
           layer.removeFromSuperlayer()
           then()
-          layer = nil
         }
         layer.addAnimation(opacity, forKey:nil)
         layer.addAnimation(transform, forKey:nil)
@@ -188,8 +187,13 @@ public class Ripple {
   }
   
   public class func stop(view:UIView) {
-    for l in targetLayer?.sublayers ?? nil {
-      l.removeAllAnimations()
+    
+    guard let sublayers = targetLayer?.sublayers else {
+        return
+    }
+    
+    for layer in sublayers {
+      layer.removeAllAnimations()
     }
   }
   
