@@ -3,32 +3,32 @@ import UIKit
 
 class DemoView1 : UIView {
   
-  override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-    super.touchesBegan(touches, withEvent: event)
-    for touch: AnyObject in touches {
-      let t: UITouch = touch as! UITouch
-      let location = t.locationInView(self)
-      
-      //RIPPLE BORDER
-      rippleBorder(location, color: UIColor.whiteColor())
-
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        
+        for touch: AnyObject in touches {
+            let t: UITouch = touch as! UITouch
+            let location = t.location(in: self)
+            
+            //RIPPLE BORDER
+            rippleBorder(location: location, color: .white)
+            
+        }
     }
-  }
-
 }
 
 class DemoView2 : UIView {
-  
-  override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-    super.touchesBegan(touches, withEvent: event)
-    for touch: AnyObject in touches {
-      let t: UITouch = touch as! UITouch
-      let location = t.locationInView(self)
-
-      //RIPPLE FILL
-      rippleFill(location, color: UIColor.whiteColor())
-
-    }
-  }
-  
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        
+        for touch: AnyObject in touches {
+            let t: UITouch = touch as! UITouch
+            let location = t.location(in: self)
+            
+            //RIPPLE FILL
+            rippleFill(location: location, color: .white)
+            
+        }
+    }  
 }
