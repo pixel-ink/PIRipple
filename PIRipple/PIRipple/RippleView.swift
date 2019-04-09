@@ -14,7 +14,7 @@ class RippleView : UIView {
    
     ///Default 1, 1 is for fill and 2 is for border
     @IBInspectable
-    var type: Int = 1
+    var rippleType: Int = 1
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
@@ -23,7 +23,7 @@ class RippleView : UIView {
             let location = t.location(in: self)
             
             guard enableRipple else {return}
-            guard let rippleType = RippleType(rawValue: type) else {return}
+            guard let rippleType = RippleType(rawValue: rippleType) else {return}
             
             switch rippleType {
             case .fill:
