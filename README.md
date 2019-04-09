@@ -53,9 +53,14 @@ UIView.rippleFill(CGPoint, color: UIColor)
 # 1. with Storyboard
   - Add View on storyboard RippleView
   - Set class type to RippleView
- (https://github.com/dipkasyap/PIRipple/blob/master/Screen%20Shot%202019-04-09%20at%2010.22.48%20am.png)
+  
+  ![Screenshot](Class.png)
+
   - Set property on Attributes inspector 
- (https://github.com/dipkasyap/PIRipple/blob/master/Screen%20Shot%202019-04-09%20at%2010.22.48%20am.png)
+  
+  ![Screenshot](Property.png)
+
+ 
 ```
  @IBOutlet weak var demoView1: RippleView!
 ```
