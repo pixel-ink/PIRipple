@@ -13,7 +13,7 @@
 		8483D9E91B15F2AF00DE5D87 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8483D9E81B15F2AF00DE5D87 /* Images.xcassets */; };
 		8483D9EC1B15F2AF00DE5D87 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8483D9EA1B15F2AF00DE5D87 /* LaunchScreen.xib */; };
 		8483D9F81B15F2AF00DE5D87 /* PIRippleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483D9F71B15F2AF00DE5D87 /* PIRippleTests.swift */; };
-		8483DA021B15F4E400DE5D87 /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483DA011B15F4E400DE5D87 /* DemoView.swift */; };
+		8483DA021B15F4E400DE5D87 /* RippleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483DA011B15F4E400DE5D87 /* RippleView.swift */; };
 		8483DA041B15F6D600DE5D87 /* PIRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483DA031B15F6D600DE5D87 /* PIRipple.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +38,7 @@
 		8483D9F11B15F2AF00DE5D87 /* PIRippleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PIRippleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8483D9F61B15F2AF00DE5D87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8483D9F71B15F2AF00DE5D87 /* PIRippleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PIRippleTests.swift; sourceTree = "<group>"; };
-		8483DA011B15F4E400DE5D87 /* DemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoView.swift; sourceTree = "<group>"; };
+		8483DA011B15F4E400DE5D87 /* RippleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RippleView.swift; sourceTree = "<group>"; };
 		8483DA031B15F6D600DE5D87 /* PIRipple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIRipple.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -85,7 +85,7 @@
 				8483D9E11B15F2AF00DE5D87 /* AppDelegate.swift */,
 				8483D9E31B15F2AF00DE5D87 /* ViewController.swift */,
 				8483D9E51B15F2AF00DE5D87 /* Main.storyboard */,
-				8483DA011B15F4E400DE5D87 /* DemoView.swift */,
+				8483DA011B15F4E400DE5D87 /* RippleView.swift */,
 				8483D9E81B15F2AF00DE5D87 /* Images.xcassets */,
 				8483D9EA1B15F2AF00DE5D87 /* LaunchScreen.xib */,
 				8483D9DF1B15F2AF00DE5D87 /* Supporting Files */,
@@ -164,7 +164,7 @@
 			attributes = {
 				LastSwiftMigration = 0730;
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = pixelink;
 				TargetAttributes = {
 					8483D9DB1B15F2AF00DE5D87 = {
@@ -221,7 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8483D9E41B15F2AF00DE5D87 /* ViewController.swift in Sources */,
-				8483DA021B15F4E400DE5D87 /* DemoView.swift in Sources */,
+				8483DA021B15F4E400DE5D87 /* RippleView.swift in Sources */,
 				8483DA041B15F6D600DE5D87 /* PIRipple.swift in Sources */,
 				8483D9E21B15F2AF00DE5D87 /* AppDelegate.swift in Sources */,
 			);
@@ -273,13 +273,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -307,6 +317,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -318,13 +329,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -343,6 +364,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -355,6 +378,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.pixelink.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -366,6 +390,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.pixelink.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

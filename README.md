@@ -43,18 +43,33 @@ UIView.rippleFill(CGPoint, color: UIColor)
 
 - example
 
-```
-override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-  super.touchesBegan(touches, withEvent: event)
-  for touch: AnyObject in touches {
-    var t: UITouch = touch as! UITouch
-    let location = t.locationInView(self)
+"CGPoint" means location in view
 
-    rippleBorder(location, color: UIColor.whiteColor())
+- example
+  - Subclass RippleView for UIView 
+  - enableRipple porperty 
+  - set rippleType property
 
-  }
-}
+# 1. with Storyboard
+  - Add View on storyboard RippleView
+  - Set class type to RippleView
+  
+  ![Screenshot](Class.png)
+
+  - Set property on Attributes inspector 
+  
+  ![Screenshot](Property.png)
+
+ 
 ```
+ @IBOutlet weak var demoView1: RippleView!
+```
+# 2. programatically
+```
+	yourView.enableRipple = true
+	yourView.rippleType = 1 // 1 for fill and 2 for border 
+```
+
 
 - run your code after animation
 
