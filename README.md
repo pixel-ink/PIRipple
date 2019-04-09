@@ -50,24 +50,19 @@ UIView.rippleFill(CGPoint, color: UIColor)
   - enableRipple porperty 
   - set rippleType property
 
-1. with Storyboard
+# 1. with Storyboard
   - Add View on storyboard RippleView
-  - Set class type to 
-  
+  - Set class type to RippleView
  (https://github.com/dipkasyap/PIRipple/blob/master/Screen%20Shot%202019-04-09%20at%2010.22.48%20am.png)
-  
   - Set property on Attributes inspector 
-  
  (https://github.com/dipkasyap/PIRipple/blob/master/Screen%20Shot%202019-04-09%20at%2010.22.48%20am.png)
-
 ```
  @IBOutlet weak var demoView1: RippleView!
 ```
-2. programatically
+# 2. programatically
 ```
-
-    yourView.enableRipple = true
-    yourView.rippleType = 1 // 1 for fill and 2 for border 
+	yourView.enableRipple = true
+	yourView.rippleType = 1 // 1 for fill and 2 for border 
 ```
 
 
